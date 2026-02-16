@@ -79,7 +79,7 @@ public class Main {
             minute = minute + 1;
             if (minute % 10 == 0) {
                 overheats++;
-                System.out.println("прошло " + minute + " минут, перегрев, заряд:" + charge + "%");
+                System.out.println("прошло " + minute + " минут, перегрев, заряд: " + charge + "%");
                 endMinute = minute;
                 minute = minute + 2;
                 continue;
