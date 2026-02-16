@@ -21,7 +21,6 @@ public class Main {
         for (int i = 0; i < way; i += 500) {
             start++;
             System.out.println(start + "_ Держитесь! Осталось " + (way - i) + " метров");
-            // distance = distance + 500;
         }
         System.out.println("\nЗадача #3 (вариант 1)");
         int payment = 1060;
@@ -56,17 +55,43 @@ public class Main {
         System.out.println("\nЗадача #4");
         int month = 0;
         int total = 0;
-        int plan= 12_000_000;
+        int plan = 12_000_000;
         while (true) {
             month++;
             if (total <= plan) {
                 System.out.println("Месяц " + month + "-й, на счету: " + (total = total + 15_000));
-            }if (month % 6 == 0) {
+            }
+            if (month % 6 == 0) {
                 System.out.println("Начисление процентов? +" + (total / 100) * 7);
                 total = total + ((total / 100) * 7);
-            }if (total >= plan) {
-                System.out.println("На счету : "+total);
-                    break;}
+            }
+            if (total >= plan) {
+                System.out.println("На счету : " + total);
+                break;
+            }
+        }
+        System.out.println("\nЗадача #5");
+        int charge = 20;
+        int minute = 0;
+        int overheats = 0;
+        int endMinute = 0;
+        while (charge <= 100) {
+            minute = minute + 1;
+            if (minute % 10 == 0) {
+                overheats++;
+                System.out.println("прошло " + minute + " минут, перегрев, заряд:" + charge + "%");
+                endMinute = minute;
+                minute = minute + 2;
+                continue;
+            }
+            int endCharge = charge;
+            charge = charge + 2;
+            if (overheats == 3) {
+                System.out.println("\n3 перегрева, досрочное завершение зарядки");
+                System.out.println("\nВремя зарядаки составило " + endMinute + " минут, на " + endCharge + "%");
+                break;
+            }
         }
     }
-    }
+}
+
