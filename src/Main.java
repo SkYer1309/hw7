@@ -23,6 +23,37 @@ public class Main {
             System.out.println(start + "_ Держитесь! Осталось " + (way - i) + " метров");
             // distance = distance + 500;
         }
-        System.out.println("\nЗадача #3");
+        System.out.println("\nЗадача #3 (вариант 1)");
+        int payment = 1060;
+        int day;
+        int counter = 1;
+        while (payment >= 0) {
+            day = payment / 100;
+            System.out.println("День:" + counter + " В бюджете осталось " + payment + " на " + day + " дней парковки");
+            if (counter % 5 == 0) {
+                counter++;
+                System.out.println("5-й день, плата не снимается");
+                continue;
+            }
+            counter++;
+            payment = payment - 100;
+        }
+        System.out.println("\nЗадача #3 (вариант 2)");
+        counter = 1;
+        int i = 2000;
+        for (; i >= 0; ) {
+            day = i / 100;
+            System.out.println("День:" + counter + " В бюджете осталось " + i + " на " + day + " дней парковки");
+            if (counter % 5 == 0) {
+                System.out.println("5-й день, плата не снимается");
+                counter++;
+                continue;
+            } else {
+                counter++;
+                i = i - 100;
+            }
+        }
+        System.out.println("\nЗадача #4");
+
     }
 }
